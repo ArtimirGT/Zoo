@@ -12,11 +12,15 @@ class baseAnimal:
         self.IsFeeded = False
         self.sum = 0
 
-    def eat(self, food):
-        if self.sum + food >= self._eating:
+    def eat(self, value, food):
+        if self.sum + value >= self._eating and food in self._food:
+            print(self.name, ': я наелся')
             self.IsFeeded = True
+        elif food in self._food:
+            print(self.name, ': я не наелся')
+            self.sum = self.sum + value
         else:
-            self.sum = self.sum + food
+            print(self.name, ': я это не буду')
 
     def doSound(self):
         print(self._type + ": " + self._sound)
@@ -34,4 +38,7 @@ class baseAnimal:
 
     @area.setter
     def area(self, value):
-        self._area = value
+        if value >= 0:
+            self._area = value
+        else:
+            print("Ty durak?")
