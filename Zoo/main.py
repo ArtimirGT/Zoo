@@ -1,11 +1,18 @@
 from Animals.Wolf import *
 from Animals.Dog import *
 from Animals.Llama import *
+from Animals.Elephant import *
 from Valier import *
-V = valier("Wolfes", 1000, "forest")
-V.add(wolf("Boris", 10, 6))
-V.add(wolf("Anatoly", 10, 7))
-V.add(llama("Kira Yoshikage", 5, 15))
-V.add(dog("Maks", 4, 5))
-V.printAnimalList()
-print(V.freeSize)
+boris = wolf("Boris", 10, 6)
+anatoly = wolf("Anatoly", 10, 7)
+kira = llama("Kira Yoshikage", 5, 15)
+du = elephant("Du", 20, 30)
+maks = dog("Maks", 5, 4)
+V = valier("Grass", 100, "desert")
+V.add(kira)
+V.add(du)
+V.allDoSound()
+V.feed(5, "grass")
+V.getWhoNotFeeded()
+V.feed(35, "leafs")
+V.getWhoNotFeeded()
