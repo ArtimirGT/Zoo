@@ -6,8 +6,8 @@ class baseAnimal:
         self._type = ""
         self._biome = ""
         self._area = 0
-        self._food = ""
-        self._GrassOrMeat = ""
+        self._food = []
+        self._IsPredator = bool
         self._sound = ""
         self.IsFeeded = False
         self.sum = 0
@@ -33,8 +33,20 @@ class baseAnimal:
         return self._type
 
     @property
+    def food(self):
+        return self._food
+
+    @property
     def area(self):
         return self._area
+
+    @property
+    def IsPredator(self):
+        return self._IsPredator
+
+    @property
+    def biome(self):
+        return self._biome
 
     @area.setter
     def area(self, value):

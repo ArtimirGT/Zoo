@@ -1,15 +1,11 @@
-from Wolf import *
-from Dog import *
-from Llama import *
-wolf = wolf("Boris", 10, 6)
-dog = dog("Vasya", 5, 3)
-llama = llama("Kira", 2, 10)
-wolf.eat(9, "rabbits")
-print(wolf.IsFeeded)
-wolf.eat(1, "rabbits")
-print(wolf.IsFeeded)
-print('')
-dog.area = -1
-dog.area = 100
-print(dog.area)
-llama.doSound()
+from Animals.Wolf import *
+from Animals.Dog import *
+from Animals.Llama import *
+from Valier import *
+V = valier("Wolfes", 1000, "forest")
+V.add(wolf("Boris", 10, 6))
+V.add(wolf("Anatoly", 10, 7))
+V.add(llama("Kira Yoshikage", 5, 15))
+V.add(dog("Maks", 4, 5))
+V.printAnimalList()
+print(V.freeSize)
