@@ -11,10 +11,10 @@ class valier:
         self.__freeSize = size
 
     def add(self, animal):
-        if animal.IsPredator == True and len(self.animals) == 0 and animal.area < self.__freeSize:
+        if animal.IsPredator == True and len(self.animals) == 0 and animal.area <= self.__freeSize:
             self.IsPredator = True
             self.predatorType = animal.type
-        if animal.IsPredator == self.IsPredator and animal.biome == self.biome and animal.area < self.__freeSize:
+        if animal.IsPredator == self.IsPredator and (animal.biome == self.biome or animal.biome == "anywhere") and animal.area <= self.__freeSize:
             if animal.IsPredator == True and animal.type == self.predatorType:
                 self.animals.append(animal)
                 self.__freeSize -= animal.area
