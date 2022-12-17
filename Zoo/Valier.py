@@ -11,6 +11,9 @@ class valier:
         self.__freeSize = size
 
     def add(self, animal):
+        if len(self.animals) == 0:
+            self.IsPredator = False
+            self.predatorType = ''
         if animal.IsPredator == True and len(self.animals) == 0 and animal.area <= self.__freeSize:
             self.IsPredator = True
             self.predatorType = animal.type
@@ -39,6 +42,10 @@ class valier:
         print(self.name, ": deleted", name.name, "(" + name.type + ")")
         self.__freeSize += name.area
 
+    def deleteAll(self):
+        self.animals.clear()
+        print('')
+        print(self.name ,": all animals deleted")
     def allDoSound(self):
         print("")
         print("--- animals :", self.name + "; do sound ---")
