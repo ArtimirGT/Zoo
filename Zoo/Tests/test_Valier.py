@@ -52,3 +52,6 @@ class valier_tests(unittest.TestCase):
         expected = False
         actual = t.feeded
         self.assertEqual(expected, actual)
+
+if __name__ == '__main__':
+    unittest.main()

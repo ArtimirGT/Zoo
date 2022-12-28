@@ -93,3 +93,6 @@ class baseAnimals_Tests(unittest.TestCase):
         expected = 10
         actual = d.area
         self.assertEqual(expected, actual)
+
+if __name__ == '__main__':
+    unittest.main()
