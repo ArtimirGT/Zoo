@@ -23,7 +23,7 @@ class baseAnimal:
             print(self.name, ': я это не буду')
 
     def doSound(self):
-        print(self._type + ": " + self._sound)
+        print(self.name, "(" + self._type + ")" + ": " + self._sound)
 
     def play(self):
         print(self._type + " играет")
@@ -51,6 +51,7 @@ class baseAnimal:
     @area.setter
     def area(self, value):
         if value >= 0:
+            print(self.name, ": area set", value)
             self._area = value
         else:
             print("Ty durak?")

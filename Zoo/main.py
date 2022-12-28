@@ -1,7 +1,4 @@
-from Animals.Wolf import *
-from Animals.Dog import *
-from Animals.Llama import *
-from Animals.Elephant import *
+from AnimalsImport import *
 from Valier import *
 boris = wolf("Boris", 10, 6)
 anatoly = wolf("Anatoly", 10, 7)

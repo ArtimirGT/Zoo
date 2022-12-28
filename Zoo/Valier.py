@@ -21,15 +21,17 @@ class valier:
             if animal.IsPredator == True and animal.type == self.predatorType:
                 self.animals.append(animal)
                 self.__freeSize -= animal.area
-                print(self.name, ": added", animal.type)
+                print(self.name, ": added", animal.name, "(" + animal.type + ")")
             elif animal.IsPredator == True:
                 print("нельзя подселить", animal.type, "(" + animal.name + ")", ": несовместимые хищники")
             else:
                 self.animals.append(animal)
                 self.__freeSize -= animal.area
-                print(self.name, ": added", animal.type)
+                print(self.name, ": added", animal.name, "(" + animal.type + ")")
         else:
             print("нельзя подселить", animal.type, "(" + animal.name + ")", ": неверный биом, несовместимые виды или не хватает места")
+        return self.animals
+
     def printAnimalList(self):
         print("")
         print("--- animal list:", self.name, "---")
@@ -46,6 +48,7 @@ class valier:
         self.animals.clear()
         print('')
         print(self.name ,": all animals deleted")
+
     def allDoSound(self):
         print("")
         print("--- animals :", self.name + "; do sound ---")
@@ -67,6 +70,15 @@ class valier:
             if i.IsFeeded == False:
                 print(i.name, "(" + i.type + "); need:", i.food, "; this much:", i._eating - i.sum)
         print("---------------------")
+
     @property
     def freeSize(self):
         return self.__freeSize
+
+    @property
+    def feeded(self):
+        for i in self.animals:
+            if i.IsFeeded == False:
+                return False
+            else:
+                return True

@@ -5,6 +5,6 @@ class wolf(baseAnimal):
         self._type = "wolf"
         self._biome = "forest"
         self._area = 25
-        self._food = ["rabbits", "humans"]
+        self._food = ["rabbits", "humans", "meat"]
         self._IsPredator = True
         self._sound = "auf"
